@@ -143,7 +143,7 @@ function generate() {
     ctx.fillText(details.value.name, centerX - (ctx.measureText(details.value.name).width/2), 390)
 
     const sigImage = document.getElementById('signature_img')
-    
+
     const w = aspectWidth(sigImage, 50)
 
     ctx.drawImage(sigImage, centerX - (w/2), 420, w, 54)
@@ -161,14 +161,14 @@ function generate() {
     ctx.strokeRect(346, 35, 290, 160)
 
     // ctx.fillRect(345, 205, 100,100)
-    qrcode = document.getElementById('qrcode')
+    let qrcode = document.getElementById('qrcode')
     ctx.drawImage(qrcode, 345, 205, 100,100)
 
 
     ctx.fillText(details.value.birth_date, 460, 248)
     ctx.fillText(details.value.gender, 460, 287)
     ctx.fillText("President", 455, 465)
-    
+
     ctx.font = "bold 14px arial"
     ctx.fillText("Birth Date:", 450, 230)
     ctx.fillText("Gender:", 450, 270)
@@ -180,7 +180,7 @@ function generate() {
 
     ctx.font = "14px arial narrow"
 
-    ctx.fillText(details.value.contact_person, 430, 355)   
+    ctx.fillText(details.value.contact_person, 430, 355)
     ctx.fillText(details.value.contact_address, 430, 375)
     ctx.fillText(details.value.contact_number, 430, 395)
 
@@ -242,5 +242,5 @@ function aspectWidth(img, height) {
 .hidden {
     display: none;
 }
-    
+
 </style>
