@@ -146,7 +146,7 @@ function generate() {
 
     const sigImage = document.getElementById('signature_img')
 
-    const w = aspectWidth(sigImage, 50)
+    const w = aspectWidth(sigImage, 70)
 
     ctx.drawImage(sigImage, centerX - (w/2), 588, w, 76)
 
@@ -164,22 +164,13 @@ function generate() {
     ctx.strokeRect(485, 49, 406, 224)
 
     // ctx.fillRect(345, 205, 100,100)
-    let qrcode = document.getElementById('qrcode')
-    ctx.drawImage(qrcode, 345, 205, 100,100)
+    qrcode = document.getElementById('qrcode')
+    ctx.drawImage(qrcode, 484, 287, 140,140)
 
 
     ctx.fillText(details.value.birth_date, 460, 248)
     ctx.fillText(details.value.gender, 460, 287)
-    ctx.fillText("President", 455, 465)
-
-    ctx.font = "bold 14px arial"
-    ctx.fillText("Birth Date:", 450, 230)
-    ctx.fillText("Gender:", 450, 270)
-    ctx.fillText("In case of emergency please contact:", 345, 335)
-    ctx.fillText("Name: ", 345, 355)
-    ctx.fillText("Address: ", 345, 375)
-    ctx.fillText("Mobile No.: ", 345, 395)
-    ctx.fillText("DR. MARIANO M. LERIN, CPA", 397, 448)
+    ctx.fillText("President", 638, 651)
 
     ctx.font = "bold 18px arial"
     ctx.fillText("Birth Date:", 631, 322)
@@ -190,9 +181,7 @@ function generate() {
     ctx.fillText("Mobile No.: ", 484, 554)
     ctx.fillText("DR. MARIANO M. LERIN, CPA", 567, 628)
 
-    ctx.fillText(details.value.contact_person, 430, 355)
-    ctx.fillText(details.value.contact_address, 430, 375)
-    ctx.fillText(details.value.contact_number, 430, 395)
+    ctx.font = "18px arial narrow"
 
     ctx.fillText(details.value.contact_person, 603, 498)
     ctx.fillText(details.value.contact_address, 603, 526)
