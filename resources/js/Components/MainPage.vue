@@ -168,8 +168,8 @@ function generate() {
     ctx.drawImage(qrcode, 484, 287, 140,140)
 
 
-    ctx.fillText(details.value.birth_date, 460, 248)
-    ctx.fillText(details.value.gender, 460, 287)
+    ctx.fillText(details.value.birth_date, 645, 348)
+    ctx.fillText(details.value.gender, 645, 402)
     ctx.fillText("President", 638, 651)
 
     ctx.font = "bold 18px arial"
