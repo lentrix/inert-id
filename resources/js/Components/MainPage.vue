@@ -51,7 +51,7 @@
             <button class="btn" @click="generate">Generate</button>
         </div>
         <div>
-            <canvas ref="canvas" id="canvas" width="652" height="486">
+            <canvas ref="canvas" id="canvas" width="915" height="682">
             </canvas>
         </div>
 
@@ -123,42 +123,47 @@ function generate() {
     const lerin_sig = document.getElementById('lerin_sig')
 
     //front
-    ctx.drawImage(img, 0, 0, 306,486)
+    // ctx.drawImage(img, 0, 0, 306,486)
+    ctx.drawImage(img, 0, 0, 429,682)
 
-    let centerX = 306/2;
+    // let centerX = 306/2;
+    let centerX = 429/2;
 
     ctx.fillStyle = "rgb(1 31 128 / 70%)"
-    ctx.fillRect(centerX-80, 338, 160, 27)
-    let txtLen = ctx.measureText(details.value.idnumber)
-    ctx.font = "bold 15px sans"
+    ctx.fillRect(centerX-112, 474, 224, 38)
+    ctx.font = "bold 24px sans"
     ctx.fillStyle = "yellow"
-    ctx.fillText(details.value.idnumber, centerX-(txtLen.width/2)-20, 358)
-    ctx.font =  "14px arial"
-    ctx.fillText(details.value.program, centerX-(ctx.measureText(details.value.program).width/2), 408)
+    let txtLen = ctx.measureText(details.value.idnumber)
+    ctx.fillText(details.value.idnumber, centerX-(txtLen.width/2), 502)
+    ctx.font =  "20px arial"
+    ctx.fillText(details.value.program, centerX-(ctx.measureText(details.value.program).width/2), 572)
 
     ctx.fillStyle = "#47fff9"
 
-    ctx.font = "bold 16pt arial narrow"
+    ctx.font = "bold 19pt arial narrow"
 
-    ctx.fillText(details.value.name, centerX - (ctx.measureText(details.value.name).width/2), 390)
+    ctx.fillText(details.value.name, centerX - (ctx.measureText(details.value.name).width/2), 547)
 
     const sigImage = document.getElementById('signature_img')
 
     const w = aspectWidth(sigImage, 50)
 
-    ctx.drawImage(sigImage, centerX - (w/2), 420, w, 54)
+    const w = aspectWidth(sigImage, 70)
+
+    ctx.drawImage(sigImage, centerX - (w/2), 588, w, 76)
 
     const picImage = document.getElementById('picture_img')
-    const picWidth = 168
+    const picWidth = 236
 
-    ctx.drawImage(picImage, centerX-(picWidth/2), 163,picWidth, picWidth)
+    ctx.drawImage(picImage, centerX-(picWidth/2), 228,picWidth, picWidth)
 
     //back
+    ctx.lineWidth = 3
     ctx.fillStyle = "#000"
-    ctx.font = "14px sans"
-    ctx.strokeRect(346, 10, 290, 25)
-    ctx.fillText("ID Validity Indicator", 420, 27)
-    ctx.strokeRect(346, 35, 290, 160)
+    ctx.font = "20px sans"
+    ctx.strokeRect(485, 14, 406, 35)
+    ctx.fillText("ID Validity Indicator", 589, 38)
+    ctx.strokeRect(485, 49, 406, 224)
 
     // ctx.fillRect(345, 205, 100,100)
     let qrcode = document.getElementById('qrcode')
@@ -178,13 +183,24 @@ function generate() {
     ctx.fillText("Mobile No.: ", 345, 395)
     ctx.fillText("DR. MARIANO M. LERIN, CPA", 397, 448)
 
-    ctx.font = "14px arial narrow"
+    ctx.font = "bold 18px arial"
+    ctx.fillText("Birth Date:", 631, 322)
+    ctx.fillText("Gender:", 631, 378)
+    ctx.fillText("In case of emergency please contact:", 484, 470)
+    ctx.fillText("Name: ", 484, 498)
+    ctx.fillText("Address: ", 484, 526)
+    ctx.fillText("Mobile No.: ", 484, 554)
+    ctx.fillText("DR. MARIANO M. LERIN, CPA", 567, 628)
 
     ctx.fillText(details.value.contact_person, 430, 355)
     ctx.fillText(details.value.contact_address, 430, 375)
     ctx.fillText(details.value.contact_number, 430, 395)
 
-    ctx.drawImage(lerin_sig, 450, 388, 100,80)
+    ctx.fillText(details.value.contact_person, 603, 498)
+    ctx.fillText(details.value.contact_address, 603, 526)
+    ctx.fillText(details.value.contact_number, 603, 554)
+
+    ctx.drawImage(lerin_sig, 631, 544, 140, 112)
 }
 
 function aspectWidth(img, height) {
