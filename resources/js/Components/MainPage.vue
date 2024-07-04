@@ -148,8 +148,6 @@ function generate() {
 
     const w = aspectWidth(sigImage, 50)
 
-    const w = aspectWidth(sigImage, 70)
-
     ctx.drawImage(sigImage, centerX - (w/2), 588, w, 76)
 
     const picImage = document.getElementById('picture_img')
