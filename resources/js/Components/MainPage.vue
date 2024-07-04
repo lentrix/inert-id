@@ -164,7 +164,7 @@ function generate() {
     ctx.strokeRect(485, 49, 406, 224)
 
     // ctx.fillRect(345, 205, 100,100)
-    qrcode = document.getElementById('qrcode')
+    let qrcode = document.getElementById('qrcode')
     ctx.drawImage(qrcode, 484, 287, 140,140)
 
 
